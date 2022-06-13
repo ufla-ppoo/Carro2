@@ -39,7 +39,7 @@ public class Carro {
     }
 
     /*
-     * Reduz a velocidade do carro em 10 unidades
+     * Reduz a velocidade do carro em 10 unidades (a velocidade não pode ser tornar negativa)
      */
     public void reduzir() {
         this.velocidadeAtual -= 10;

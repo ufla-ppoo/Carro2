@@ -41,6 +41,8 @@ public class NomeDaClasse {
 
 Crie uma classe que tem o método `main`. Dentro do método, crie um objeto do tipo `Carro` cujo nome seja *Fusca* e, em seguida, exiba seus dados na tela.
 
+Obs.: a classe Carro não deve fazer nenhuma exibição de dados para o usuário.
+
 Exemplo de código Java:
 
 ```java
@@ -67,9 +69,14 @@ Altere a classe principal adicionando linhas para acelerar o carro e depois exib
 
 Altere o programa do exercício anterior de forma a obter do usuário o nome do carro a ser criado e a quantidade de vezes que o carro será acelerado. Por fim, exiba os dados do carro criado.
 
+- Veja nos slides anteriores (1.2 - Introdução Java) como usar um objeto da classe Scanner para obter dados do usuário. 
+  - Obs.: por enquanto, ignore o aviso do VS Code (“Resource leak: 'entrada' is never closed"). Veremos mais detalhes sobre isso nas aulas de tratamentos de exceção.
+
 ### 5. Menu
 
 Altere o programa do exercício anterior de forma que ele exiba o menu abaixo e execute as ações do menu. Deve ser criado um método separado para exibição do menu e outro para tratar a opção de menu escolhida pelo usuário.
+
+Obs.: neste passo faz sentido que a classe principal passe a ter um atributo da classe Carro.
 
 ```
 1. Criar o carro
@@ -97,8 +104,9 @@ Portanto, nesse passo faça o seguinte:
 
 Vamos agora alterar a classe `Principal` para que ela passe a trabalhar com um vetor de carros de 5 posições. Faça as alterações necessárias para tratar o vetor, dentre elas:
 - Declare o atributo e crie-o no construtor.
-- Altere a opção criar carro, para que ela permita criar até 5 carros.
-  - Depois disso, o usuário deve ser informado que não é possível criar mais carros.
+- Na opção criar carro, um único carro deve ser criado e acrescentado ao vetor.
+  - O usuário poderá acessar essa opção várias vezes, para criar vários carros.
+  - Mas depois que o vetor estiver cheio, o usuário deve ser informado que não é possível criar mais carros.
 - Altere as opções acelerar e reduzir do menu pedindo ao usuário qual carro ele quer tratar.
   - Para isso, peça o nome do carro ao usuário e o encontre no vetor.
 - Altere a opção exibir do menu para que exiba as informações de todos os carros já criados.

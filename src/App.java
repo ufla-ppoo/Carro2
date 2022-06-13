@@ -29,5 +29,8 @@ public class App {
             carro.acelerar();
         }
         System.out.println("Velocidade atual: " + carro.getVelocidadeAtual());
+
+        // fecha o objeto Scanner para liberar os seus recursos
+        entrada.close();
     }    
 }
