@@ -39,12 +39,16 @@ public class Carro {
     }
 
     /*
-     * Reduz a velocidade do carro em 10 unidades (a velocidade não pode ser tornar negativa)
+     * Reduz a velocidade do carro em 10 unidades.
+     * A velocidade não pode se tornar negativa, retorna false se a velocidade não foi reduzida por causa disso
      */
-    public void reduzir() {
-        this.velocidadeAtual -= 10;
-        if (this.velocidadeAtual < 0) {
-            this.velocidadeAtual = 0;
+    public boolean reduzir() {        
+        if (this.velocidadeAtual - 10 >= 0) {
+            this.velocidadeAtual -= 10;
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }

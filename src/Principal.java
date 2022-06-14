@@ -74,8 +74,11 @@ public class Principal {
                 break;
         }
 
-        System.out.println("\nDigite ENTER para continuar!");
-        entrada.nextLine();
+        // se o usuário não estiver saindo do programa, pede para ele digitar ENTER antes de exibir o menu novamente
+        if (opcao != 5) {
+            System.out.println("\nDigite ENTER para continuar!");
+            entrada.nextLine();
+        }
     }
 
     /*
@@ -168,9 +171,17 @@ public class Principal {
         Carro carro = encontrarCarro();
         
         // Se o carro foi encontrado o desacelera, senão avisa o usuário.
-        if (carro != null) {
+        if (carro != null) {            
             System.out.println("Freando o carro...");
-            carro.reduzir();
+            // O método reduzir retorna um boolean indicando se é possível reduzir a velocidade ou não,
+            // pois ele evita que a velocidade do carro se torna negativa.
+            // Dessa forma, precisamos tratar o retorno do método.
+            if (carro.reduzir()) {
+                System.out.println("Velocidade reduzida.");
+            }
+            else {
+                System.out.println("Não foi possível reduzir a velocidade!");
+            }
         }
         else {
             System.out.println("Carro não encontrado!");
