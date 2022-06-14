@@ -31,6 +31,7 @@ public class App {
         System.out.println("Velocidade atual: " + carro.getVelocidadeAtual());
 
         // fecha o objeto Scanner para liberar os seus recursos
+        // Sem isso, o VS Code fica exibindo um aviso: "Resource leak: 'entrada' is never closed"
         entrada.close();
     }    
 }

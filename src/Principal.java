@@ -33,6 +33,9 @@ public class Principal {
             tratarMenu(opcao);
 
         } while (opcao != 5);
+
+        // fecha o objeto Scanner para liberar os seus recursos
+        entrada.close();
     }
 
     /*
