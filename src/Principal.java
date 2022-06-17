@@ -5,10 +5,13 @@ import java.util.Scanner;
  */
 public class Principal {
 
-    // Vetor de carros
+    // Vetor para guardar os carros
     private Carro[] carros;
 
-    // Scanner para obter dados do usuário
+    // Indica quantos carros já foram criados
+    private int nroCarrosCriados;
+
+    // Scanner para obter dados do usuário via terminal
     private Scanner entrada;
 
     /* 
@@ -16,6 +19,7 @@ public class Principal {
      */
     public Principal() {
         carros = new Carro[5];
+        nroCarrosCriados = 0;
         entrada = new Scanner(System.in);
     }
 
@@ -94,33 +98,24 @@ public class Principal {
      * Cria um carro e o adiciona no vetor se ainda existir posição disponível
      */
     private void criarCarro() {
-        boolean criouCarro = false;
-
-        // Percorre o vetor de carros
-        for (int i = 0; i < carros.length; i++) {
-
-            // Se a posição do vetor está nula, posso criar um carro
-            if (carros[i] == null) {
-
-                // Pede ao usuário o nome do carro a ser criado
-                String nome = pedirNomeCarro();
-
-                // Cria um objeto do tipo carro com o nome passado pelo usuário e o adiciona no vetor
-                carros[i] = new Carro(nome);
-
-                // Indica que um carro foi criado
-                criouCarro = true;
-
-                // Interrompe o loop
-                break;
-            }
-        }
-
-        // Verifica se o carro foi criado ou não e informa o usuário
-        if (criouCarro) {
-            System.out.println("Carro criado com sucesso!");
-        } else {
+        // Se já foram criados carros para todas as posições do vetor, não é possível criar mais carros.
+        if (nroCarrosCriados == carros.length) {
             System.out.println("Não é possível criar mais carros!");
+        }
+        else { // se ainda há posição disponível no vetor.
+            // Pede ao usuário o nome do carro a ser criado
+            String nome = pedirNomeCarro();
+
+            // Cria um objeto do tipo carro com o nome passado pelo usuário e o adiciona no vetor.
+            // Repare que se não foi criado ainda nenhum carro, o carro deve ser colocado na posição 0 do vetor.
+            // Se já foi criado um carro, o segundo carro deve ser colocado na posição 1, e assim por diante.
+            // Portanto, o atributo `nroCarrosCriados` pode ser usado para definir a posição a ser utilizada do vetor.
+            carros[nroCarrosCriados] = new Carro(nome);
+
+            // Incrementa o número de carros criados
+            nroCarrosCriados++;
+
+            System.out.println("Carro criado com sucesso!");
         }
     }
 
@@ -147,7 +142,7 @@ public class Principal {
     }
 
     /*
-     * Trata o menu Acelerar Carro
+     * Trata a opção de menu Acelerar Carro
      */
     private void acelerarCarro() {        
         // Busca o carro no vetor             
@@ -164,7 +159,7 @@ public class Principal {
     }
 
     /*
-     * Trata o menu Frear Carro
+     * Trata a opção de Frear Carro
      */
     private void frearCarro() {        
         // Busca o carro no vetor             
@@ -174,7 +169,7 @@ public class Principal {
         if (carro != null) {            
             System.out.println("Freando o carro...");
             // O método reduzir retorna um boolean indicando se é possível reduzir a velocidade ou não,
-            // pois ele evita que a velocidade do carro se torna negativa.
+            // pois ele evita que a velocidade do carro se torne negativa.
             // Dessa forma, precisamos tratar o retorno do método.
             if (carro.reduzir()) {
                 System.out.println("Velocidade reduzida.");
@@ -189,7 +184,7 @@ public class Principal {
     }
 
     /*
-     * Trata o menu Exibir Carro
+     * Trata a opção de menu Exibir Carros
      */
     private void exibirCarros() {
         System.out.println("Exibindo informações dos carros...");
