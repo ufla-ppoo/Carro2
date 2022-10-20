@@ -39,7 +39,7 @@ public class NomeDaClasse {
 
 ### 2. Primeiro Programa
 
-Crie uma classe que tem o método `main`. Dentro do método, crie um objeto do tipo `Carro` cujo nome seja *Fusca* e, em seguida, exiba seus dados na tela.
+Agora altere a classe App, que tem o método main. Dentro do método, crie um objeto do tipo Carro para representar um fusca e, em seguida, exiba seus dados na tela.
 
 Obs.: a classe Carro não deve fazer nenhuma exibição de dados para o usuário.
 
@@ -67,10 +67,13 @@ Altere a classe principal adicionando linhas para acelerar o carro e depois exib
 
 ### 4. Obtendo dados do usuário
 
-Altere o programa do exercício anterior de forma a obter do usuário o nome do carro a ser criado e a quantidade de vezes que o carro será acelerado. Por fim, exiba os dados do carro criado.
+Altere o programa do exercício anterior de forma a obter do usuário o nome do carro a ser criado e a quantidade de vezes que o carro será acelerado.
+
+Em seguida, use uma estrutura de repetição (como for ou while) para que o carro acelere a quantidade de vezes solicitada pelo usuário.
+Por fim, exiba os dados do carro criado
 
 - Veja nos slides anteriores (1.2 - Introdução Java) como usar um objeto da classe Scanner para obter dados do usuário. 
-  - Obs.: por enquanto, ignore o aviso do VS Code (“Resource leak: 'entrada' is never closed"). Veremos mais detalhes sobre isso nas aulas de tratamentos de exceção.
+  - Obs.: No VS Code é exibido um aviso (_warning_) de compilação: `“Resource leak: 'entrada' is never closed"`. Isso acontece porque, o ideal, é liberarmos os recursos do objeto quando ele não é mais usado e, para isso, basta chamar o método `close` da classe `Scanner`.
 
 ### 5. Menu
 
