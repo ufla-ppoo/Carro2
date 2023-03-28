@@ -10,9 +10,11 @@ A sugestão é que você faça os exercícios listados abaixo sem olhar o códig
 
 ### 1. Classe Carro
 
-Suponha que você esteja começando a criar um jogo de corrida e, nele, precisará representar um carro.  No seu contexto, um carro é algo que tem nome e velocidade.
+Suponha que você esteja começando a criar um jogo de corrida e, nele, precisará representar um carro.
+No seu contexto, um carro é algo que tem modelo e velocidade.
 
-Vamos então definir uma classe `Carro`, com os atributos nome e velocidade. Sabemos que precisamos também definir um construtor e métodos de acesso a esses atributos.
+Vamos então definir uma classe `Carro`, com os atributos modelo e velocidade.
+Sabemos que precisamos também definir um construtor e métodos de acesso a esses atributos.
 
 Utilize o exemplo abaixo como referência.
 
@@ -61,13 +63,14 @@ public class Programa {
 
 ### 3. Acelerando
 
-Vamos melhorar nosso exemplo. Crie na classe `Carro` os métodos `acelerar` e `reduzir` que, respectivamente, aumenta e diminui a velocidade do carro em 10 unidades.
+Vamos melhorar nosso exemplo.
+Crie na classe `Carro` os métodos `acelerar` e `reduzir` que, respectivamente, aumenta e diminui a velocidade do carro em 5 unidades.
 
 Altere a classe principal adicionando linhas para acelerar o carro e depois exiba novamente os dados dele.
 
 ### 4. Obtendo dados do usuário
 
-Altere o programa do exercício anterior de forma a obter do usuário o nome do carro a ser criado e a quantidade de vezes que o carro será acelerado.
+Altere o programa do exercício anterior de forma a obter do usuário o modelo do carro a ser criado e a quantidade de vezes que o carro será acelerado.
 
 Em seguida, use uma estrutura de repetição (como for ou while) para que o carro acelere a quantidade de vezes solicitada pelo usuário.
 Por fim, exiba os dados do carro criado
@@ -77,7 +80,8 @@ Por fim, exiba os dados do carro criado
 
 ### 5. Menu
 
-Altere o programa do exercício anterior de forma que ele exiba o menu abaixo e execute as ações do menu. Deve ser criado um método separado para exibição do menu e outro para tratar a opção de menu escolhida pelo usuário.
+Altere o programa do exercício anterior de forma que ele exiba o menu abaixo e execute as ações do menu.
+Deve ser criado um método separado para exibição do menu e outro para tratar a opção de menu escolhida pelo usuário.
 
 Obs.: neste passo faz sentido que a classe principal passe a ter um atributo da classe Carro.
 
@@ -111,11 +115,11 @@ Vamos agora alterar a classe `Principal` para que ela passe a trabalhar com um v
   - O usuário poderá acessar essa opção várias vezes, para criar vários carros.
   - Mas depois que o vetor estiver cheio, o usuário deve ser informado que não é possível criar mais carros.
 - Altere as opções acelerar e reduzir do menu pedindo ao usuário qual carro ele quer tratar.
-  - Para isso, peça o nome do carro ao usuário e o encontre no vetor.
+  - Para isso, peça o modelo do carro ao usuário e o encontre no vetor.
 - Altere a opção exibir do menu para que exiba as informações de todos os carros já criados.
 
 ```java
-// Exemplo de sintaxe
+// Exemplos de uso de vetores
 
 // Declaração de vetor
 Nave[] naves;

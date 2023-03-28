@@ -107,9 +107,9 @@ public class Principal {
             String nome = pedirNomeCarro();
 
             // Cria um objeto do tipo carro com o nome passado pelo usuário e o adiciona no vetor.
-            // Repare que se não foi criado ainda nenhum carro, o carro deve ser colocado na posição 0 do vetor.
-            // Se já foi criado um carro, o segundo carro deve ser colocado na posição 1, e assim por diante.
-            // Portanto, o atributo `nroCarrosCriados` pode ser usado para definir a posição a ser utilizada do vetor.
+            // - Repare que se não foi criado ainda nenhum carro, o carro deve ser colocado na posição 0 do vetor.
+            //   Se já foi criado um carro, o segundo carro deve ser colocado na posição 1, e assim por diante.
+            //   Portanto, o atributo `nroCarrosCriados` pode ser usado para definir a posição a ser utilizada do vetor.
             carros[nroCarrosCriados] = new Carro(nome);
 
             // Incrementa o número de carros criados
@@ -130,7 +130,7 @@ public class Principal {
         for (Carro carro : carros) {
             // Se o objeto não é null, verifica se o nome do carro é igual ao passado
             if (carro != null) {
-                if (carro.getNome().equals(nome)) {
+                if (carro.getModelo().equals(nome)) {
                     // Carro encontrado. Ele é retornado.
                     return carro;
                 }
@@ -193,7 +193,7 @@ public class Principal {
         for (Carro carro : carros) {
             // Se o objeto não é null, exibe suas informações
             if (carro != null) {                
-                System.out.println("Carro " + carro.getNome() + " tem velocidade " + carro.getVelocidadeAtual());
+                System.out.println("Carro " + carro.getModelo() + " tem velocidade " + carro.getVelocidadeAtual());
             }
         }
     }

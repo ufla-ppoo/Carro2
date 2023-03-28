@@ -1,22 +1,24 @@
 import java.util.Scanner;
 
 /*
- * Classe que gera um programa que uso um objeto da classe Carro
+ * Classe que gera um programa que uso um objeto da classe Carro.
+ * 
+ * Código até o Passo 4
  */
 public class App {
     public static void main(String[] args) {
         // Cria o objeto scanner para obter dados do usuário
         Scanner entrada = new Scanner(System.in);
         
-        // Pede ao usuário o nome do carro a ser criado
-        System.out.print("Digite o nome do carro: ");
-        String nome = entrada.nextLine();
+        // Pede ao usuário o modelo do carro a ser criado
+        System.out.print("Digite o modelo do carro: ");
+        String modelo = entrada.nextLine();
 
-        // Cria um objeto do tipo carro com o nome passado pelo usuário
-        Carro carro = new Carro(nome);
+        // Cria um objeto do tipo carro com o modelo passado pelo usuário
+        Carro carro = new Carro(modelo);
 
         // Exibe as informações do carro na tela
-        System.out.println("Carro " + carro.getNome() + " criado!");
+        System.out.println("Carro " + carro.getModelo() + " criado!");
         System.out.println("Velocidade inicial é: " + carro.getVelocidadeAtual());
 
         // Perguntar ao usuário quantas vezes ele quer acelerar o carro

@@ -2,26 +2,26 @@
  * Classe que representa um carro
  */
 public class Carro {
-    // nome do carro
-    private String nome;
+    // modelo do carro
+    private String modelo;
     // velocidade atual do carro
     private int velocidadeAtual;
 
     /*
      * Construtor da classe.
      * 
-     * O carro é construtído com o nome passado e começa com velocidade zero
+     * O carro é construtído com o modelo passado e começa com velocidade zero
      */ 
-    public Carro(String nome) {
-        this.nome = nome;
+    public Carro(String modelo) {
+        this.modelo = modelo;
         this.velocidadeAtual = 0;
     }
 
     /* 
-     * Retorna o nome do carro
+     * Retorna o modelo do carro
      */
-    public String getNome() {
-        return this.nome;
+    public String getModelo() {
+        return this.modelo;
     }
 
     /*
@@ -32,19 +32,19 @@ public class Carro {
     }
 
     /*
-     * Acelera o carro, aumentando a sua velocidade em 10 unidades
+     * Acelera o carro, aumentando a sua velocidade em 5 unidades
      */
     public void acelerar() {
-        this.velocidadeAtual += 10;
+        this.velocidadeAtual += 5;
     }
 
     /*
-     * Reduz a velocidade do carro em 10 unidades.
+     * Reduz a velocidade do carro em 5 unidades.
      * A velocidade não pode se tornar negativa, retorna false se a velocidade não foi reduzida por causa disso
      */
     public boolean reduzir() {        
-        if (this.velocidadeAtual - 10 >= 0) {
-            this.velocidadeAtual -= 10;
+        if (this.velocidadeAtual - 5 >= 0) {
+            this.velocidadeAtual -= 5;
             return true;
         }
         else {
